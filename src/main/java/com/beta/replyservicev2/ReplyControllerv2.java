@@ -1,14 +1,18 @@
-package com.beta.replyservice;
+package com.beta.replyservicev2;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.beta.component.ReplyMessage;
 
-import org.springframework.web.bind.annotation.PathVariable;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
-public class ReplyController {
+@RequestMapping("/v2")
+public class ReplyControllerv2 {
 
 	@GetMapping("/reply")
 	public ReplyMessage replying() {
@@ -17,6 +21,7 @@ public class ReplyController {
 
 	@GetMapping("/reply/{message}")
 	public ReplyMessage replying(@PathVariable String message) {
+		log.info("Received: {}", message);
 		return new ReplyMessage(message);
 	}
 }
