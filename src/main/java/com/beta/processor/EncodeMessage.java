@@ -6,7 +6,6 @@ public class EncodeMessage implements MessageProcessor {
 
 	@Override
 	public String process(String message) {
-		String hashMessage = StringUtility.hashString(message);
-		return StringUtility.formatStringAsHexValues(hashMessage);
+		return StringUtility.hashString(message);
 	}
 }

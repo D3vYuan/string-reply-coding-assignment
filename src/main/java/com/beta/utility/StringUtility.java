@@ -1,5 +1,6 @@
 package com.beta.utility;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import com.beta.constant.MessageConstant;
@@ -22,11 +23,11 @@ public final class StringUtility {
 
 	public static String hashString(String message) {
 		log.debug("Processing: Hashing {}", message);
-		return message;
-	}
+		if (StringUtils.isAllBlank(message)) {
+			return MessageConstant.INVALID_INPUT;
+		}
 
-	public static String formatStringAsHexValues(String message) {
-		log.debug("Processing: Hexing {}", message);
-		return message;
+		log.debug("Processing: Hashed {} > {}", message, DigestUtils.md5Hex(message));
+		return DigestUtils.md5Hex(message);
 	}
 }
