@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.beta.component.ReplyMessage;
+import com.beta.service.ReplyService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -14,14 +15,19 @@ import lombok.extern.slf4j.Slf4j;
 @RequestMapping("/v2")
 public class ReplyControllerv2 {
 
+	private ReplyService replyService;
+
+	public ReplyControllerv2(ReplyService replyService) {
+		this.replyService = replyService;
+	}
+
 	@GetMapping("/reply")
 	public ReplyMessage replying() {
-		return new ReplyMessage("Message is empty");
+		return replyService.process(null);
 	}
 
 	@GetMapping("/reply/{message}")
 	public ReplyMessage replying(@PathVariable String message) {
-		log.info("Received: {}", message);
-		return new ReplyMessage(message);
+		return replyService.process(message);
 	}
 }
