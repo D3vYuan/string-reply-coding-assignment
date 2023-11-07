@@ -14,7 +14,7 @@ import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import com.beta.constant.TestConstant;
+import com.beta.constant.TestV1Constant;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-class RestServiceApplicationTest {
+class RestControllerv1Test {
 
 	@LocalServerPort
 	int port;
@@ -36,33 +36,33 @@ class RestServiceApplicationTest {
 	@DisplayName("v1 - without message")
 	@Test
 	void testv1_withoutmessage() throws Exception {
-		String input = TestConstant.V1_EMPTY_INPUT;
-		String response = TestConstant.V1_EMPTY_RESPONSE;
-		String endpointPath = String.format("%s", TestConstant.V1_ENDPOINT);
+		String input = TestV1Constant.V1_EMPTY_INPUT;
+		String response = TestV1Constant.V1_EMPTY_RESPONSE;
+		String endpointPath = String.format("%s", TestV1Constant.V1_ENDPOINT);
 		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
-				.andExpect(status().isOk()).andExpect(jsonPath(TestConstant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
+				.andExpect(status().isOk()).andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
 				.andReturn();
 	}
 
 	@DisplayName("v1 - with message")
 	@Test
 	void testv1_withmessage() throws Exception {
-		String input = TestConstant.V1_VALID_INPUT;
-		String response = TestConstant.V1_VALID_INPUT;
-		String endpointPath = String.format("%s/%s", TestConstant.V1_ENDPOINT, input);
+		String input = TestV1Constant.V1_VALID_INPUT;
+		String response = TestV1Constant.V1_VALID_INPUT;
+		String endpointPath = String.format("%s/%s", TestV1Constant.V1_ENDPOINT, input);
 		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
-				.andExpect(status().isOk()).andExpect(jsonPath(TestConstant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
+				.andExpect(status().isOk()).andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
 				.andReturn();
 	}
 
 	@DisplayName("v1 - helloworld")
 	@Test
 	void testv1_helloworld() throws Exception {
-		String input = TestConstant.V1_HELLO_WORLD;
-		String response = TestConstant.V1_HELLO_WORLD;
-		String endpointPath = String.format("%s/%s", TestConstant.V1_ENDPOINT, input);
+		String input = TestV1Constant.V1_HELLO_WORLD;
+		String response = TestV1Constant.V1_HELLO_WORLD;
+		String endpointPath = String.format("%s/%s", TestV1Constant.V1_ENDPOINT, input);
 		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
-				.andExpect(status().isOk()).andExpect(jsonPath(TestConstant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
+				.andExpect(status().isOk()).andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
 				.andReturn();
 	}
 }

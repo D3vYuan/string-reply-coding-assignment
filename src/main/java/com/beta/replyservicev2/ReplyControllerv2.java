@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.beta.component.ReplyMessage;
+import com.beta.exception.InvalidInputException;
 import com.beta.service.ReplyService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,12 +23,12 @@ public class ReplyControllerv2 {
 	}
 
 	@GetMapping("/reply")
-	public ReplyMessage replying() {
+	public ReplyMessage replying() throws InvalidInputException {
 		return replyService.process(null);
 	}
 
 	@GetMapping("/reply/{message}")
-	public ReplyMessage replying(@PathVariable String message) {
+	public ReplyMessage replying(@PathVariable String message) throws InvalidInputException {
 		return replyService.process(message);
 	}
 }

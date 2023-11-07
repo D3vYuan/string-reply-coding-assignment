@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.beta.component.MessageProcessorEnum;
 import com.beta.component.ReplyMessage;
-import com.beta.constant.MessageConstant;
+import com.beta.exception.InvalidInputException;
 import com.beta.processor.MessageProcessor;
 
 import lombok.extern.slf4j.Slf4j;
@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class ReplyService {
 
-	public ReplyMessage process(String message) {
+	public ReplyMessage process(String message) throws InvalidInputException {
 		if (StringUtils.isAllBlank(message)) {
 			return new ReplyMessage("Message is empty");
 		}
@@ -34,8 +34,7 @@ public class ReplyService {
 			String currentRule = messageRulesParts[i];
 			Optional<MessageProcessorEnum> processorOptional = MessageProcessorEnum.getProcessorByID(currentRule);
 			if (!processorOptional.isPresent()) {
-				processedMessage = MessageConstant.INVALID_INPUT;
-				break;
+				throw new InvalidInputException(String.format("Rule #%s is not supported", currentRule));
 			}
 
 			MessageProcessorEnum processorEnum = processorOptional.get();

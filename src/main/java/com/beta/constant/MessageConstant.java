@@ -6,4 +6,5 @@ public final class MessageConstant {
 	}
 
 	public static final String INVALID_INPUT = "Invalid input";
+	public static final String UNKNOWN_ERROR = "Unknown error";
 }
