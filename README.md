@@ -14,6 +14,7 @@
 </div>
 
 [![Deploy to AWS Elasticbean Stalk](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml/badge.svg)](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml)
+  [![HitCount](https://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment.svg?style=flat&show=unique)](http://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment)
 
 <!-- TABLE OF CONTENTS -->
 
