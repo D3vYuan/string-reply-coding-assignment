@@ -18,3 +18,5 @@ README.html
 .idea
 log/
 *log
+*ppk
+/secrets
