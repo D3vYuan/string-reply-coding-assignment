@@ -1,6 +1,8 @@
 package com.beta.constant;
 
 public final class TestV2Constant {
+	public static String V2_API_USER = "username";
+	public static String V2_API_PASSWORD = "password";
 	public static String V2_ENDPOINT = "/v2/reply";
 
 	public static String V2_EMPTY_INPUT = "";

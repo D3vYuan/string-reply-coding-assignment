@@ -27,13 +27,6 @@
   </div-->
 </div>
 
-<!-- [![Deploy to AWS Elasticbean Stalk](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml/badge.svg)](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml)
-[![Synk](https://snyk.io/test/github/D3vYuan/string-reply-coding-assignment/badge.svg)](https://snyk.io/test/github/D3vYuan/string-reply-coding-assignment)
-[![Maintainability](https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/maintainability)](https://codeclimate.com/github/D3vYuan/string-reply-coding-assignment/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/test_coverage)](https://codeclimate.com/github/D3vYuan/string-reply-coding-assignment/test_coverage)
-[![Coverage](.github/badges/jacoco.svg)]
-[![HitCount](https://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment.svg?style=flat&show=unique)](http://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment) -->
-
 <!-- TABLE OF CONTENTS -->
 
 <!-- ## Table of Contents -->
@@ -65,10 +58,22 @@
         </ul>
     </li>
     <li>
+        <a href="#security">Security</a>
+        <ul>
+            <li><a href="#basic-authentication">Basic Authentication</a></li>
+        </ul>
+    </li>
+    <li>
         <a href="#testing">Testing</a>
         <ul>
             <li><a href="#unit-testing">Unit Testing</a></li>
             <li><a href="#integration-testing">Integration Testing</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#documentation">Documentation</a>
+        <ul>
+            <li><a href="#swagger">Swagger</a></li>
         </ul>
     </li>
     <li>
@@ -154,6 +159,14 @@ The following are the available endpoints:
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- SECURITY -->
+
+## Security
+
+### Basic Authentication
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- TESTING -->
 
 ## Testing
@@ -163,6 +176,14 @@ The following are the available endpoints:
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Integration Testing
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+<!-- DOCUMENTATION -->
+
+## Documentation
+
+### Swagger
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -219,11 +240,16 @@ The following are some areas which the application can be enhanced
 
 - [Restful API Unit Testing][ref-rest-api-testing-1]
 - [Restful API Unit Testing][ref-rest-api-testing-2]
+- [Restful API Unit Testing][ref-rest-api-testing-3]
 - [Restful API Exception Handling][ref-rest-api-exception-1]
 - [Restful API Exception Handling][ref-rest-api-exception-2]
 - [Restful API AWS/Github Actions][ref-rest-api-aws-deployment-1]
 - [Restful API AWS/Github Actions][ref-rest-api-aws-deployment-2]
 - [Restful API AWS/Github Actions][ref-rest-api-aws-deployment-3]
+- [Restful API Basic Authentication][ref-rest-api-security-1]
+- [Restful API Swagger][ref-rest-api-swagger-1]
+- [Restful API Swagger][ref-rest-api-swagger-2]
+- [Restful API Swagger][ref-rest-api-swagger-3]
 - [Readme Template][template-resource]
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -236,18 +262,31 @@ The following are some areas which the application can be enhanced
 
 [ref-rest-api-testing-1]: https://www.javaguides.net/2022/03/spring-boot-unit-testing-crud-rest-api-with-junit-and-mockito.html
 [ref-rest-api-testing-2]: https://www.springboottutorial.com/integration-testing-for-spring-boot-rest-services
+[ref-rest-api-testing-3]: https://docs.spring.io/spring-security/reference/servlet/test/mockmvc/http-basic.html
 [ref-rest-api-exception-1]: https://www.baeldung.com/spring-mvc-controller-custom-http-status-code
 [ref-rest-api-exception-2]: https://www.baeldung.com/exception-handling-for-rest-with-spring
 [ref-rest-api-aws-deployment-1]: https://medium.com/javarevisited/how-to-deploy-springboot-app-to-elastic-beanstalk-using-github-actions-ci-cd-30b4557b4fb8
 [ref-rest-api-aws-deployment-2]: https://virendraoswal.com/aws-elastic-beanstalk-cicd-with-github-actions
 [ref-rest-api-aws-deployment-3]: https://federicomete.medium.com/ci-cd-with-github-actions-and-aws-in-3-steps-b603a1483d8e
 
+[ref-rest-api-security-1]: https://howtodoinjava.com/spring-boot2/security-rest-basic-auth-example/
+
+[ref-rest-api-swagger-1]: https://stackoverflow.com/questions/37671125/how-to-configure-spring-security-to-allow-swagger-url-to-be-accessed-without-aut
+[ref-rest-api-swagger-2]: https://stackoverflow.com/questions/50024317/add-swagger-basic-auth-to-spring-boot-app
+[ref-rest-api-swagger-3]: https://stackoverflow.com/questions/58110036/basic-authentication-using-swagger-ui
+
 <!-- | ![looker-api-user-keys][looker-api-user-keys] | 
 |:--:| 
 | *Looker API User Key* |
-
 
 |#|Name|Type|Mode
 |--|--|--|--|
 |1|content_id|String|Nullable|
 |2|content_title|String|Nullable| -->
+
+<!-- [![Deploy to AWS Elasticbean Stalk](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml/badge.svg)](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml)
+[![Synk](https://snyk.io/test/github/D3vYuan/string-reply-coding-assignment/badge.svg)](https://snyk.io/test/github/D3vYuan/string-reply-coding-assignment)
+[![Maintainability](https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/maintainability)](https://codeclimate.com/github/D3vYuan/string-reply-coding-assignment/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/test_coverage)](https://codeclimate.com/github/D3vYuan/string-reply-coding-assignment/test_coverage)
+[![Coverage](.github/badges/jacoco.svg)]
+[![HitCount](https://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment.svg?style=flat&show=unique)](http://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment) -->

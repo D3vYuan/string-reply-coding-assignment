@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 	implementation 'org.springframework.boot:spring-boot-devtools'
 	implementation 'commons-io:commons-io:2.15.0'
 	implementation 'org.apache.commons:commons-lang3:3.13.0'
@@ -25,14 +26,17 @@ dependencies {
 	//implementation 'io.swagger.core.v3:swagger-models:2.2.18'
 	//implementation 'io.swagger.core.v3:swagger-core:2.2.18'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
+	implementation 'io.springfox:springfox-bean-validators:3.0.0'
 	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
-	
+
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	testImplementation 'org.mockito:mockito-core:5.7.0'
 	testImplementation 'org.assertj:assertj-core:3.24.2'
+	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly "org.junit.platform:junit-platform-launcher"
+	
 	
 	//stackoverflow.com/questions/35236104/gradle-build-fails-on-lombok-annotated-classes#:~:text=In%20case%20you%20are%20using%20lombok%20in%20tests%20you%20need%20to%20add%3A%20testCompileOnly%20%27org.projectlombok%3Alombok%3A1.18.8%27%20and%20testAnnotationProcessor%20%27org.projectlombok%3Alombok%3A1.18.8%27
 	testCompileOnly 'org.projectlombok:lombok:1.18.30'

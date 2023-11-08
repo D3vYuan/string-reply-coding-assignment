@@ -1,6 +1,7 @@
 package com.beta.controller;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -12,6 +13,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 import org.springframework.http.MediaType;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.beta.constant.TestV2Constant;
@@ -34,6 +36,7 @@ public class ReplyControllerv2Test {
 	ObjectMapper mapper;
 
 	@DisplayName("v2 - without message")
+	@WithMockUser(username = "username", password = "password")
 	@Test
 	void testv1_withoutmessage() throws Exception {
 		String input = TestV2Constant.V2_EMPTY_INPUT;
@@ -57,7 +60,8 @@ public class ReplyControllerv2Test {
 
 		log.debug("Test: Rule 11 - {}", input);
 		String endpointPath = String.format("%s/%s", TestV2Constant.V2_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath(TestV2Constant.V2_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -72,7 +76,8 @@ public class ReplyControllerv2Test {
 
 		log.debug("Test: Rule 12 - {}", input);
 		String endpointPath = String.format("%s/%s", TestV2Constant.V2_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath(TestV2Constant.V2_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -87,7 +92,8 @@ public class ReplyControllerv2Test {
 
 		log.debug("Test: Rule 21 - {}", input);
 		String endpointPath = String.format("%s/%s", TestV2Constant.V2_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath(TestV2Constant.V2_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -102,7 +108,8 @@ public class ReplyControllerv2Test {
 
 		log.debug("Test: Rule 21 - {}", input);
 		String endpointPath = String.format("%s/%s", TestV2Constant.V2_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath(TestV2Constant.V2_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -115,7 +122,8 @@ public class ReplyControllerv2Test {
 
 		log.debug("Test: Rule 13 - {}", input);
 		String endpointPath = String.format("%s/%s", TestV2Constant.V2_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is4xxClientError())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is4xxClientError())
 				.andExpect(status().isBadRequest())
 				.andExpect(jsonPath(TestV2Constant.V2_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -128,7 +136,8 @@ public class ReplyControllerv2Test {
 
 		log.debug("Test: Rule 31 - {}", input);
 		String endpointPath = String.format("%s/%s", TestV2Constant.V2_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is4xxClientError())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is4xxClientError())
 				.andExpect(status().isBadRequest())
 				.andExpect(jsonPath(TestV2Constant.V2_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -141,7 +150,8 @@ public class ReplyControllerv2Test {
 
 		log.debug("Test: Rule 33 - {}", input);
 		String endpointPath = String.format("%s/%s", TestV2Constant.V2_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is4xxClientError())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is4xxClientError())
 				.andExpect(status().isBadRequest())
 				.andExpect(jsonPath(TestV2Constant.V2_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}

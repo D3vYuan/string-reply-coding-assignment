@@ -1,6 +1,7 @@
 package com.beta.controller;
 
 import static org.hamcrest.CoreMatchers.is;
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.httpBasic;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -15,6 +16,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.beta.constant.TestV1Constant;
+import com.beta.constant.TestV2Constant;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.extern.slf4j.Slf4j;
@@ -39,7 +41,8 @@ class RestControllerv1Test {
 		String input = TestV1Constant.V1_EMPTY_INPUT;
 		String response = TestV1Constant.V1_EMPTY_RESPONSE;
 		String endpointPath = String.format("%s", TestV1Constant.V1_ENDPOINT);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -50,7 +53,8 @@ class RestControllerv1Test {
 		String input = TestV1Constant.V1_VALID_INPUT;
 		String response = TestV1Constant.V1_VALID_INPUT;
 		String endpointPath = String.format("%s/%s", TestV1Constant.V1_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
@@ -61,7 +65,8 @@ class RestControllerv1Test {
 		String input = TestV1Constant.V1_HELLO_WORLD;
 		String response = TestV1Constant.V1_HELLO_WORLD;
 		String endpointPath = String.format("%s/%s", TestV1Constant.V1_ENDPOINT, input);
-		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
+		mock.perform(get(endpointPath).with(httpBasic(TestV2Constant.V2_API_USER, TestV2Constant.V2_API_PASSWORD))
+				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
 				.andExpect(status().isOk())
 				.andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
