@@ -14,10 +14,11 @@ jobs:
       - name: Checkout Codes
         uses: actions/checkout@v4
 
-      # https://github.com/marketplace/actions/setup-java-jdk#caching-packages-dependencies
+      # https://github.com/marketplace/actions/setup-java-jdk
       - name: Setup JDK and Download Dependencies
         uses: actions/setup-java@v3
         with:
+          distribution: 'temurin'
           java-version: '11'
           cache: 'gradle'
 
