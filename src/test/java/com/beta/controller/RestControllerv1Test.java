@@ -1,4 +1,4 @@
-package com.beta.replyservice;
+package com.beta.controller;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -40,8 +40,8 @@ class RestControllerv1Test {
 		String response = TestV1Constant.V1_EMPTY_RESPONSE;
 		String endpointPath = String.format("%s", TestV1Constant.V1_ENDPOINT);
 		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
-				.andExpect(status().isOk()).andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
-				.andReturn();
+				.andExpect(status().isOk())
+				.andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
 
 	@DisplayName("v1 - with message")
@@ -51,8 +51,8 @@ class RestControllerv1Test {
 		String response = TestV1Constant.V1_VALID_INPUT;
 		String endpointPath = String.format("%s/%s", TestV1Constant.V1_ENDPOINT, input);
 		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
-				.andExpect(status().isOk()).andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
-				.andReturn();
+				.andExpect(status().isOk())
+				.andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
 
 	@DisplayName("v1 - helloworld")
@@ -62,7 +62,7 @@ class RestControllerv1Test {
 		String response = TestV1Constant.V1_HELLO_WORLD;
 		String endpointPath = String.format("%s/%s", TestV1Constant.V1_ENDPOINT, input);
 		mock.perform(get(endpointPath).contentType(MediaType.APPLICATION_JSON)).andExpect(status().is2xxSuccessful())
-				.andExpect(status().isOk()).andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response)))
-				.andReturn();
+				.andExpect(status().isOk())
+				.andExpect(jsonPath(TestV1Constant.V1_RESPONSE_MESSAGE_JSONPATH, is(response))).andReturn();
 	}
 }

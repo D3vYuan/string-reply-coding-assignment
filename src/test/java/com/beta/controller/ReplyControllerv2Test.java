@@ -1,4 +1,4 @@
-package com.beta.replyservicev2;
+package com.beta.controller;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;

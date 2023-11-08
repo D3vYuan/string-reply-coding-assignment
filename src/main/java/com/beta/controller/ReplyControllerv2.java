@@ -1,4 +1,4 @@
-package com.beta.replyservicev2;
+package com.beta.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,7 +27,7 @@ public class ReplyControllerv2 {
 		return replyService.process(null);
 	}
 
-	@GetMapping("/reply/{message}")
+	@GetMapping("/reply/{message:[0-9]{2}-.*}")
 	public ReplyMessage replying(@PathVariable String message) throws InvalidInputException {
 		return replyService.process(message);
 	}
