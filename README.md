@@ -5,16 +5,24 @@
 <br />
 <div align="center">
   <h2 align="center">String Reply v2</h2>
-  <!--p align="center">
-    String Reply Coding Assignment<br>
+  <p align="center">
+    <img src="https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml/badge.svg" alt="Deploy to AWS Elasticbean Stalk"/>
+    <img src="https://snyk.io/test/github/D3vYuan/string-reply-coding-assignment/badge.svg" alt="Synk Security"/>
+    <img src="https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/maintainability" alt="CodeClimate Maintanability"/>
+    <img src="https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/test_coverage" alt="CodeClimate Test Coverage"/>
+    <img src="https://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment.svg?style=flat&show=unique" alt="Repo View Count"/>
   </p>
-  <div>
+  <!--div>
     <img src="images/profile_pic.png" alt="Logo" width="80" height="80">
   </div-->
 </div>
 
-[![Deploy to AWS Elasticbean Stalk](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml/badge.svg)](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml)
-  [![HitCount](https://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment.svg?style=flat&show=unique)](http://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment)
+<!-- [![Deploy to AWS Elasticbean Stalk](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml/badge.svg)](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml)
+[![Synk](https://snyk.io/test/github/D3vYuan/string-reply-coding-assignment/badge.svg)](https://snyk.io/test/github/D3vYuan/string-reply-coding-assignment)
+[![Maintainability](https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/maintainability)](https://codeclimate.com/github/D3vYuan/string-reply-coding-assignment/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/069d23a4da9969dc4c29/test_coverage)](https://codeclimate.com/github/D3vYuan/string-reply-coding-assignment/test_coverage)
+[![Coverage](.github/badges/jacoco.svg)]
+[![HitCount](https://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment.svg?style=flat&show=unique)](http://hits.dwyl.com/D3vYuan/D3vYuan/string-reply-coding-assignment) -->
 
 <!-- TABLE OF CONTENTS -->
 
