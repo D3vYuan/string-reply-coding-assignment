@@ -26,7 +26,7 @@ jobs:
       - run: ./gradlew build --no-daemon
 
       # Get Executable Jar Location
-      - run: find . -type f -name "*jar"
+      - run: find . -type f -name "rest-service*jar"
 
       # Upload Executable Jar
       - name: Upload the Build Artifact
@@ -60,7 +60,7 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: StringReply
           environment_name: StringReply-env
-          version_label: 1.3
+          version_label: ${{ github.sha }}
           region: ap-southeast-1
           deployment_package: rest-service-0.0.1-SNAPSHOT.jar
-          use_existing_version_if_available: true
+          # use_existing_version_if_available: true
