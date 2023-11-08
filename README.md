@@ -5,15 +5,15 @@
 <br />
 <div align="center">
   <h2 align="center">String Reply v2</h2>
-  <p align="center">
-    String Reply Coding Assignment
+  <!--p align="center">
+    String Reply Coding Assignment<br>
   </p>
-  <!--div>
+  <div>
     <img src="images/profile_pic.png" alt="Logo" width="80" height="80">
   </div-->
 </div>
 
----
+[![Deploy to AWS Elasticbean Stalk](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml/badge.svg)](https://github.com/D3vYuan/string-reply-coding-assignment/actions/workflows/main.yml)
 
 <!-- TABLE OF CONTENTS -->
 
