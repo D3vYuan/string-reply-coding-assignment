@@ -19,4 +19,6 @@ README.html
 log/
 *log
 *ppk
+*pdf
 /secrets
+/diagram
