@@ -228,13 +228,12 @@ The above shows the flow of the `reverse string` request:
 | *Hash String Design* |
 
 The above shows the flow of the `hash string` request:
-1. The *user* will initiate a request to the **String Reply v2** providing the necessary input (E.g *11-kbzw9ru*)
+1. The *user* will initiate a request to the **String Reply v2** providing the necessary input (E.g *22-kbzw9ru*)
 2. Upon received the request, the *controller* will pass the message to the *service* to get the processed string
 3. The *service* will then split the message to extract the *rule* and pass the *rule* to the *factory* to retrieve the corresponding *processor*
 4. *Factory* will search through its list to determine if a *processor* exists for the particular rule. If it exists, it will return that *processor*. Otherwise, it will throw an exception
 5. With the *processor*, the *service* can then pass the message where it will perform the string hashing and return the result back to *service*
-6. The *service* will then return the 7. The *controller* will format the response with the hashed string and return it to the *user*
- string to the *controller*
+6. The *service* will then return the hashed string to the *controller*
 7. The *controller* will format the response with the hashed string and return it to the *user*
 
 <p align="right">(<a href="#top">back to top</a>)</p>
