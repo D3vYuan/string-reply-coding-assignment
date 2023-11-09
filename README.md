@@ -723,6 +723,7 @@ Once the environment is setup, we will then have some metrics of the application
 `Swagger` not only provides documentation for the restful api, it also serves as a platform for user to try out the api itself. We'll be using a dummy user account to test the api.
 
 **application.properties**
+
 To create the dummy user, we can add the following entry to the `application.properties`:
 
 ```bash
