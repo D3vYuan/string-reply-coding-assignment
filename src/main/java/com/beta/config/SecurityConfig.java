@@ -11,7 +11,7 @@ import com.beta.constant.SecurityConstant;
 
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.csrf(csrf -> csrf.disable()).httpBasic(Customizer.withDefaults())

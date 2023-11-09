@@ -27,7 +27,7 @@ public class ReplyControllerv2 {
 		return replyService.process(null);
 	}
 
-	@GetMapping("/reply/{message:[0-9]{2}-.*}")
+	@GetMapping("/reply/{message:^[0-9]{2}-.*}")
 	public ReplyMessage replying(@PathVariable String message) throws InvalidInputException {
 		return replyService.process(message);
 	}
