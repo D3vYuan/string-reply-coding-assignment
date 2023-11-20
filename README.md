@@ -560,11 +560,11 @@ To build the project locally, run the following command:
 
 ### Github Actions
 
-As we are using `AWS` for the deployment to `Elasticbeanstalk`, we will need to generate the `AWS Secret key` and `access code` to run the deployment programmatically.
+As we are using `AWS` for the deployment to `Elasticbeanstalk`, we will need to generate the AWS User `Access ID` and `Secret Key` to run the deployment programmatically.
 
-**AWS User Access ID**
+**AWS User Credentials**
 
-In order to deploy the application to `AWS Elastic Beanstalk`, we will need to use the AWS User `Access ID` and `Secret Key`.
+The following shows how one can generate the AWS User `Access ID` and `Secret Key`.
 
 | ![Github-Action-AWS-Tokens][img-github-action-aws-tokens] |
 |:--:|
